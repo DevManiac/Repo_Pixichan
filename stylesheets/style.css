@@ -1,0 +1,277 @@
+
+/*---------TAGS---------------*/
+body
+{
+    background-color: #f0f5f5;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+header
+{
+    background-color: white;
+    width: 99%;
+    min-height: 60px;
+    border: 2px solid black;
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: 3px 3px black;
+}
+
+header label
+{
+    font-family: Arial, san-serif;
+    font-weight: bold;
+    font-size: 30px;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+
+ul{
+    
+    float: left;
+    width: 70%;
+    margin-top: 6px;
+    padding: 0;
+
+}
+
+
+li
+{
+    display: inline;
+    padding: 12px;
+}
+
+a
+{
+    text-decoration: none;
+    color: #6E6E6E;
+}
+a:hover
+{
+    color: #A4A4A4;
+}
+
+
+footer
+{
+    clear: both;
+    text-align: center;
+}
+
+
+
+/*----------ID--------------------*/
+
+#navbar
+{
+    background-color: white;
+    min-height: 50px;
+    border: 2px solid black;
+    box-shadow: 3px 3px black;
+    margin-bottom: 10px;
+    width: 99%;
+}
+
+#time
+{
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+#about
+{
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 3px 3px black;
+    text-align: center;
+}
+
+#pixi_about
+{
+    width: 20%;
+}
+
+
+#home{
+   width: 99%; 
+   margin: auto;
+}
+
+/*Buttons in der Navigationsleiste*/
+#btn_upload
+{
+    background-image: url('../img/web_assets/btn_upload.png');
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+#btn_inbox
+{
+    background-image: url('../img/web_assets/btn_inbox.png');
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+#btn_search
+{
+    background-image: url('../img/web_assets/btn_search.png');
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+/*-------------------------------------------------*/
+/*---------classes-----------*/
+
+.container
+{
+       width: 40%;
+       margin: auto;
+       margin-bottom: 10px;
+       overflow: hidden;
+}
+
+
+.nice_font
+{
+    font-family: Arial, san-serif;
+}
+
+
+.picture_post
+{
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 3px 3px black;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    width: 94%;
+
+}
+
+.topbar
+{
+    height: 90px;
+}
+
+
+.img_Preview
+{
+  border: 2px solid lightgray;
+  width: 100%;
+  height: 80%;
+}
+
+.img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.profile_img_home
+{
+    float: left;
+    height: 70px;
+    border: 2px solid black;
+    box-shadow: 3px 3px black;
+    margin: 5px 11px;
+
+}
+
+.Username
+{
+    float: left;
+    margin-top: 30px;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.achievebox
+{
+    float: right;
+    background-color: gray;
+    width: 200px;
+    height: 50px;
+    margin-top: 17px;
+    border: 2px solid black;
+    box-shadow: 3px 3px black;
+}
+
+
+.like_commentbar
+{
+    background-color: gray;
+    height: 50px;
+}
+
+.comments
+{
+    background-color: lightgray;
+    height: 200px;
+}
+
+/*-------------OTHER RESOLUTIONS-----------------*/
+
+/*
+
+@media only screen and(orientation: landscape){} <- if smartphone/tablet is in "landscape" mode
+
+*/
+
+
+/*If max-width is under 600px change css*/
+@media only screen and (max-width: 600px) 
+{
+
+    ul
+    {
+        width: 70%;
+    }
+    
+    
+    #navbar
+    {
+    min-height: 70px;
+    }
+
+    
+    
+    #about
+    {
+
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    
+    /*---------classes-----------*/
+    .container
+    {
+       width: 100%;
+    }
+    
+    .achievebox
+    {
+        width: 100px;
+    }
+   
+    
+}
+

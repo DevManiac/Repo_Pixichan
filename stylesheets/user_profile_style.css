@@ -1,0 +1,195 @@
+@font-face
+{
+    font-family: 'Pixli';
+    src: url('SHPinsher.otf');
+}
+
+
+
+
+
+/*---------------------- TAGS-------------------------------------------*/
+
+body
+{
+    background-color: #f0f5f5;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+header
+{
+    background-color: white;
+    min-height: 60px;
+    border: 2px solid black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header label
+{
+    font-family: Arial, san-serif;
+    font-weight: bold;
+    font-size: 30px;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+
+ul{
+    
+    float: left;
+    width: 40%;
+    margin-top: 20px;
+    padding: 0;
+}
+
+
+li
+{
+    display: inline;
+    padding: 9px;
+}
+
+a
+{
+    text-decoration: none;
+    color: #6E6E6E;
+}
+a:hover
+{
+    color: #A4A4A4;
+}
+
+
+
+footer
+{
+    clear:both;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*---------------------- ID's -------------------------------------------*/
+
+
+
+#navbar
+{
+    background-color: white;
+    min-height: 60px;
+    border: 2px solid black;
+}
+
+#time
+{
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+
+/*Buttons in der Navigationsleiste*/
+#btn_upload
+{
+    background-image: url('../img/web_assets/btn_upload.png');
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+#btn_inbox
+{
+    background-image: url('../img/web_assets/btn_inbox.png');
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+#btn_search
+{
+    background-image: url('../img/web_assets/btn_search.png');
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+/*-------------------------------------------------*/
+
+
+/*---------classes-----------*/
+
+.container
+{
+       width: 70%;
+       margin: auto;
+       margin-bottom: 10px;
+       overflow: hidden;
+}
+
+.nice_font
+{
+    font-family: Arial, san-serif;
+}
+
+
+
+.PicShow
+{
+    background-color: white;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.img
+{
+  border: 1px solid lightgray;
+  background-size: 100% 100%;
+  width: 100%;
+}
+
+
+
+/*---------------------------- Other Resolutions -----------------------*/
+@media only screen and (max-width: 705px) 
+{
+
+
+ 
+.container
+{
+    width: 100%;
+}
+
+
+
+}
+
+
+@media only screen and (max-width: 320px) 
+{
+    
+ul{
+    
+    width: 0;
+    }
+
+}
+
+
+
+
+
