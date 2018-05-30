@@ -11,7 +11,7 @@ session_start();
 <head>
         <meta charset="UTF-8">
         
-        <!-- sets page size to the size of the device a user is using-->
+        <!-- Useful for @media keyword in CSS to manage responsive design-->
         <meta name="viewport" content="width=device-width">
         
         <!-- Stuff that help find the web page on the internet-->
@@ -27,7 +27,8 @@ session_start();
 
     
 <body>
-
+<!-- class Container makes everything stay centered on the website -->
+    
 <div class="container">
 <?php include ('php/header.php'); ?>
 </div>
@@ -36,7 +37,11 @@ session_start();
 <div class="container">
    
 <?php 
-   //session_start();
+   
+    /*
+    If the url doesn't have a page variable or if it's empty
+    show User the About page
+    */
    $pages = $_GET['page'];
     
     if(empty($_GET['page']))

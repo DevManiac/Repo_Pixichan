@@ -1,3 +1,10 @@
+
+<!-- 
+
+My Goal here is to get the register and the login form on one page.
+The login and register -php stuff is in 2 seperate <?php?> tags.
+
+-->
 <section>
 
     <fieldset>
@@ -55,14 +62,16 @@
     if(isset($_POST['reg_submit']))
     {
        
-        
+        /*Array that saves every name of field that is missing from the register form*/
         $missing_data = array();
 
         
         if(!empty($_POST['email']))
         {
            
-            
+            /*Email validation if the $_POST variable has something in it
+              I use regex101.com to check if this validates correctly ^^
+            */
             if(!preg_match("/[A-Za-z.-_]*@[A-Za-z]*.[a-z.]{2,}/", $_POST['email']))
             {
                 $missing_data[] = "Email";
@@ -85,7 +94,7 @@
         
         if(!empty($_POST['username']))
         {
-             echo "<label> Was Username not empty => check</label><br>";
+            
             if(!preg_match("/[A-Za-z_.0-9]{3,}/", $_POST['username']))
             {
                 $missing_data[] = "Username";
@@ -121,7 +130,10 @@
         }
         
         
-        
+        /*
+        First name/Last name and gender is Optional so their name will not be 
+        saved in the $missing_data array. Instead if they are empty or invalid they get just set tu NULL
+        */
         if(!empty($_POST['FName']))
         {
         
@@ -184,35 +196,31 @@
         
         
         
+    /*IF register-Form was okay than set everthing in the Database accordingly*/
+        
         
         
     /*FIRST Check if Username or Email is already registered*/
      $queri = "SELECT Email, Username FROM User_registered WHERE Username = '" . $username . "' OR Email = '" . $email .  "'";
      $db_erg = mysqli_query($dbc, $queri);
-     echo "<label> MySQL Query => check</label><br>";
-        
+    
      $userData = mysqli_fetch_array( $db_erg);
-     echo "<label> Try Getting result => check</label><br>";
+     
     
       if($userData)
       {
           echo "<label>Username or Email already taken!</label>";
           exit();
-      }else
-      {
-          echo "<label> Nothing found => check</label><br>";
       }
-        
         
         
       /*If the User is available than register him in database and get him a folder for his stuff*/
       $query = "INSERT INTO User_registered(Email, Username, FName, LName, Password, gender ,Register_date, security, folder_path)VALUES(?,?,?,?,?,?,?,?,?)";
       $stmt = mysqli_prepare($dbc, $query);
-      echo "<label> Prepare statement => check</label><br>";
+     
         
       if($stmt)
       {
-          echo "<label> Statement good? => yes</label><br>";
        
           /*
           Folderpath will be User + the ID of the User
@@ -220,23 +228,25 @@
           */
           $queri = "SELECT ID FROM User_registered ORDER BY ID DESC LIMIT 1";
           $db_erg = mysqli_query($dbc, $queri);
-          echo "<label> Query good? => yes</label><br>";
           
+          /*
+          if no user is in the database yet and the result gets nothing just set current userid
+          to 1.
+          */
           if(!$db_erg)
           {
               $curUser_ID = 1;
-             echo "<label> Current User id? => 1</label><br>";
+             
           }else{ 
             $zeile = mysqli_fetch_array( $db_erg);
             $curUser_ID = $zeile['ID'] + 1;
-              echo "<label> Current User id? => >1</label><br>";
+            
           }
           
           $folder_path = 'img/User' . $curUser_ID;
-          echo "<label> get Data for Folder => check</label><br>";
-        
-          $curdate = date('Y-m-d');
-          echo "<label> get Current date? => yes</label><br>";
+
+          $curdate = date('Y-m-d'); //get's current date the user registers
+          
         
           /*
           PERMISSION/RANKS:
@@ -247,19 +257,18 @@
           4 = Owner
           */
         
-          $permission = 1;   //standard für jeden
+          $permission = 1;   //standard for everybody
         
           mysqli_stmt_bind_param($stmt, "sssssssis", $email, $username, $Fname,$Lname , $password, $gender, $curdate, $permission ,$folder_path );
-           echo "<label> Parameters bound? => yes</label><br>";
+         
         
           if(!mysqli_stmt_execute($stmt))
           {
               echo "<label>Failed to Execute Statement</label>";
           }
           mysqli_stmt_close($stmt);
-          echo "<label> Statement closed? => yes</label><br>";
 
-      }else{ echo "<label> Statement really good? => no</label><br><br>"; exit(); }
+      }
     
       /*
       Create Folder for the User
@@ -267,24 +276,22 @@
     
       if (!file_exists($folder_path)) 
       { 
-          echo "<label> Folder exits? => no</label><br>";
+          
           mkdir($folder_path, 0777, true); 
-          echo "<label> Folder created? => yes</label><br>";
         
-          /*After folder should be created check if folder really exits there*/
+          /*
+          After folder should be created check if folder really exits there
+          if so than close connection and exit script
+          (function to delete the user from the database again or some other handling of such a scenario 
+          is beeing thought off ^^")
+          */
           if (!file_exists($folder_path)) 
           { 
-              echo "<label>Could not create Folder!</label><br>";
               mysqli_close($dbc);
               exit();
           }
       }
-          echo "<label> Path good? => yes</label><br><br>";
-        
-     
-        
-        
-        
+         
         
         
         
@@ -297,7 +304,7 @@
     
     $query = "INSERT INTO profile_settings(User_ID, pofile_picture, bg_pic, tags)VALUES(?,?,?,?)";
     $stmt = mysqli_prepare($dbc, $query);
-     echo "<label> Prepare number 2 => check</label><br>";
+    
     
     
     if($stmt)
@@ -309,24 +316,27 @@
         $tag = "default,pofile,Pixi";
           
         mysqli_stmt_bind_param($stmt, "isss", $curUser_ID, $default_profilePic, $default_banner, $tag);
-        echo "<label> Binding number 2 => check</label><br>";
+        
         if(!mysqli_stmt_execute($stmt))
         {
             echo "<label>Failed to Execute second Statement</label><br>";
         }
         mysqli_stmt_close($stmt);
-        echo "<label> Statement 2 closed => check</label><br>";
     }
     
         mysqli_close($dbc);
-         echo "<label> Close connection => check</label><br>";
     
     
     /*------------------------------------------------------------------------------------------------------------------------------------*/
     
         
         
-        
+    /*
+    
+    There are some Tables in the Database who need to get configured but are not programmed out yet.
+    because i am documenting and setting things up for github :p ...
+    
+    */
         
         
         

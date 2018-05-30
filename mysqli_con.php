@@ -5,7 +5,7 @@
 $dbc = @mysqli_connect('asdfgh', 'asdf', 'sdf', 'df');
 
 if($dbc->connect_error) {
-  exit('Error connecting to database: ' . mysqli_connect_error()); //Should be a message a typical user could understand in production
+  exit('Error connecting to database: ' . mysqli_connect_error()); 
 }
 
 
