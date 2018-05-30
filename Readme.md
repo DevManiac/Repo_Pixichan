@@ -1,6 +1,6 @@
-# Pixichan-Repository
+# Pixichan-Repository 
 
-### Changes
+### Changes [30.05.2018]
 
 1. Some documentation of the Code in:
 	* index.php
