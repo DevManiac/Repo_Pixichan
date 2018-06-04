@@ -1,0 +1,48 @@
+\hypertarget{user__profile_8php}{}\section{C\+:/\+Users/\+A\+T\+N\+\_\+85/\+Documents/\+Git\+Hub/zweite\+\_\+test\+\_\+repo/php/\+Pages/user\+\_\+profile.php File Reference}
+\label{user__profile_8php}\index{C\+:/\+Users/\+A\+T\+N\+\_\+85/\+Documents/\+Git\+Hub/zweite\+\_\+test\+\_\+repo/php/\+Pages/user\+\_\+profile.\+php@{C\+:/\+Users/\+A\+T\+N\+\_\+85/\+Documents/\+Git\+Hub/zweite\+\_\+test\+\_\+repo/php/\+Pages/user\+\_\+profile.\+php}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+if(! \$dbc) \mbox{\hyperlink{user__profile_8php_a6a7969de6d7b4940cdcf257b92fc4e03}{\$queri}} = \char`\"{}S\+E\+L\+E\+CT Path\+\_\+to\+\_\+img F\+R\+OM Home\+\_\+\+Picture\+\_\+data W\+H\+E\+RE User\+\_\+\+ID = (S\+E\+L\+E\+CT ID F\+R\+OM User\+\_\+registered W\+H\+E\+RE Username = \textquotesingle{}\char`\"{} . \$\+\_\+\+S\+E\+S\+S\+I\+ON\mbox{[}\textquotesingle{}name\textquotesingle{}\mbox{]} .\char`\"{}\textquotesingle{})\char`\"{}
+\item 
+\mbox{\hyperlink{user__profile_8php_a34b72c065d73689e239f5e2b5a34ce49}{\$db\+\_\+erg}} = mysqli\+\_\+query(\$dbc, \$queri)
+\item 
+if(! \$db\+\_\+erg) \mbox{\hyperlink{user__profile_8php_a9d97d44073c509a9974d6568b099b7e2}{else}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{user__profile_8php_a34b72c065d73689e239f5e2b5a34ce49}\label{user__profile_8php_a34b72c065d73689e239f5e2b5a34ce49}} 
+\index{user\+\_\+profile.\+php@{user\+\_\+profile.\+php}!\$db\+\_\+erg@{\$db\+\_\+erg}}
+\index{\$db\+\_\+erg@{\$db\+\_\+erg}!user\+\_\+profile.\+php@{user\+\_\+profile.\+php}}
+\subsubsection{\texorpdfstring{\$db\+\_\+erg}{$db\_erg}}
+{\footnotesize\ttfamily \$db\+\_\+erg = mysqli\+\_\+query(\$dbc, \$queri)}
+
+\mbox{\Hypertarget{user__profile_8php_a6a7969de6d7b4940cdcf257b92fc4e03}\label{user__profile_8php_a6a7969de6d7b4940cdcf257b92fc4e03}} 
+\index{user\+\_\+profile.\+php@{user\+\_\+profile.\+php}!\$queri@{\$queri}}
+\index{\$queri@{\$queri}!user\+\_\+profile.\+php@{user\+\_\+profile.\+php}}
+\subsubsection{\texorpdfstring{\$queri}{$queri}}
+{\footnotesize\ttfamily if (! \$dbc) \$queri = \char`\"{}S\+E\+L\+E\+CT Path\+\_\+to\+\_\+img F\+R\+OM Home\+\_\+\+Picture\+\_\+data W\+H\+E\+RE User\+\_\+\+ID = (S\+E\+L\+E\+CT ID F\+R\+OM User\+\_\+registered W\+H\+E\+RE Username = \textquotesingle{}\char`\"{} . \$\+\_\+\+S\+E\+S\+S\+I\+ON\mbox{[}\textquotesingle{}name\textquotesingle{}\mbox{]} .\char`\"{}\textquotesingle{})\char`\"{}}
+
+\mbox{\Hypertarget{user__profile_8php_a9d97d44073c509a9974d6568b099b7e2}\label{user__profile_8php_a9d97d44073c509a9974d6568b099b7e2}} 
+\index{user\+\_\+profile.\+php@{user\+\_\+profile.\+php}!else@{else}}
+\index{else@{else}!user\+\_\+profile.\+php@{user\+\_\+profile.\+php}}
+\subsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily if (! \$db\+\_\+erg) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+       
+                    \textcolor{keywordflow}{while} ($zeile = mysqli\_fetch\_array( \mbox{\hyperlink{user__profile_8php_a34b72c065d73689e239f5e2b5a34ce49}{$db\_erg}}))
+                    \{
+             
+                        echo   \textcolor{stringliteral}{'<div class="PicShow"> }
+\textcolor{stringliteral}{                        }
+\textcolor{stringliteral}{                                    <label>'} . $zeile[\textcolor{stringliteral}{'Username'}] . \textcolor{stringliteral}{'</label><br>}
+\textcolor{stringliteral}{                                    <img class="img" src="../../'} . $zeile[\textcolor{stringliteral}{'Path\_to\_img'}] . \textcolor{stringliteral}{'">}
+\textcolor{stringliteral}{                  }
+\textcolor{stringliteral}{                                </div>'};
+                    \}
+                \}
+\end{DoxyCode}

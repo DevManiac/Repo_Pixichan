@@ -1,5 +1,5 @@
 <?php
-
+/** @file*/
 session_start();
 
 ?>
@@ -38,12 +38,19 @@ session_start();
    
 <?php 
    
+    
     /*
     If the url doesn't have a page variable or if it's empty
     show User the About page
     */
+    /*!
+    Varaible used to browse pages
+   */
    $pages = $_GET['page'];
     
+    
+    /*! \brief If page-variable is empty show about-page
+    */
     if(empty($_GET['page']))
     {
         include("php/Pages/about.php");

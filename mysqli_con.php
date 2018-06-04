@@ -1,7 +1,9 @@
 <?php
+/** @file*/
 
 
-/*Link zu Datenbank*/ /*Sollte es nicht erfolgreich sein dann gib fehlermeldung aus (dies <-Keyword)*/
+
+/*!Link zu Datenbank['localhost', 'Username', 'Passwort', 'Tabelle]*/ /*Sollte es nicht erfolgreich sein dann gib fehlermeldung aus (dies <-Keyword)*/
 $dbc = @mysqli_connect('asdfgh', 'asdf', 'sdf', 'df');
 
 if($dbc->connect_error) {

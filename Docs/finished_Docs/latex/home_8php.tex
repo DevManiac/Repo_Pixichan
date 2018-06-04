@@ -1,0 +1,53 @@
+\hypertarget{home_8php}{}\section{C\+:/\+Users/\+A\+T\+N\+\_\+85/\+Documents/\+Git\+Hub/zweite\+\_\+test\+\_\+repo/php/\+Pages/home.php File Reference}
+\label{home_8php}\index{C\+:/\+Users/\+A\+T\+N\+\_\+85/\+Documents/\+Git\+Hub/zweite\+\_\+test\+\_\+repo/php/\+Pages/home.\+php@{C\+:/\+Users/\+A\+T\+N\+\_\+85/\+Documents/\+Git\+Hub/zweite\+\_\+test\+\_\+repo/php/\+Pages/home.\+php}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+if(! \$dbc) \mbox{\hyperlink{home_8php_a6a7969de6d7b4940cdcf257b92fc4e03}{\$queri}}
+\item 
+\mbox{\hyperlink{home_8php_a34b72c065d73689e239f5e2b5a34ce49}{\$db\+\_\+erg}} = mysqli\+\_\+query(\$dbc, \$queri)
+\item 
+if(! \$db\+\_\+erg) \mbox{\hyperlink{home_8php_a9d97d44073c509a9974d6568b099b7e2}{else}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{home_8php_a34b72c065d73689e239f5e2b5a34ce49}\label{home_8php_a34b72c065d73689e239f5e2b5a34ce49}} 
+\index{home.\+php@{home.\+php}!\$db\+\_\+erg@{\$db\+\_\+erg}}
+\index{\$db\+\_\+erg@{\$db\+\_\+erg}!home.\+php@{home.\+php}}
+\subsubsection{\texorpdfstring{\$db\+\_\+erg}{$db\_erg}}
+{\footnotesize\ttfamily \$db\+\_\+erg = mysqli\+\_\+query(\$dbc, \$queri)}
+
+\mbox{\Hypertarget{home_8php_a6a7969de6d7b4940cdcf257b92fc4e03}\label{home_8php_a6a7969de6d7b4940cdcf257b92fc4e03}} 
+\index{home.\+php@{home.\+php}!\$queri@{\$queri}}
+\index{\$queri@{\$queri}!home.\+php@{home.\+php}}
+\subsubsection{\texorpdfstring{\$queri}{$queri}}
+{\footnotesize\ttfamily if (! \$dbc) \$queri}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{stringliteral}{"SELECT Username, Path\_to\_img, Profile\_pic\_path FROM Home\_Picture\_data }
+\textcolor{stringliteral}{              JOIN User\_registered ON User\_registered.ID = Home\_Picture\_data.User\_ID }
+\textcolor{stringliteral}{              JOIN Profile\_img\_data ON User\_registered.ID = Profile\_img\_data.User\_ID"}
+\end{DoxyCode}
+\mbox{\Hypertarget{home_8php_a9d97d44073c509a9974d6568b099b7e2}\label{home_8php_a9d97d44073c509a9974d6568b099b7e2}} 
+\index{home.\+php@{home.\+php}!else@{else}}
+\index{else@{else}!home.\+php@{home.\+php}}
+\subsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily if (! \$db\+\_\+erg) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{
+    
+        \textcolor{keywordflow}{if}(empty($\_SESSION[\textcolor{stringliteral}{'name'}]))
+        \{
+            $user = \textcolor{stringliteral}{"Guest"};
+        \}\textcolor{keywordflow}{else}
+        \{
+            $user = $\_SESSION[\textcolor{stringliteral}{'name'}];
+        \}
+        
+        
+        $debug\_count = 0
+\end{DoxyCode}

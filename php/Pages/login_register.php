@@ -45,6 +45,8 @@ The login and register -php stuff is in 2 seperate <?php?> tags.
 
 <!-- Register -->
 <?php
+/** @file*/
+
     
     include('mysqli_con.php');
     /*check if there is a connection*/
@@ -62,15 +64,16 @@ The login and register -php stuff is in 2 seperate <?php?> tags.
     if(isset($_POST['reg_submit']))
     {
        
-        /*Array that saves every name of field that is missing from the register form*/
+        /*!Array that saves every name of field that is missing from the register form*/
         $missing_data = array();
 
         
         if(!empty($_POST['email']))
         {
            
-            /*Email validation if the $_POST variable has something in it
-              I use regex101.com to check if this validates correctly ^^
+            /*! \brief Email validation if the $_POST variable has something in it
+              
+                TIP: Iuse regex101.com to check if this validates correctly ^^
             */
             if(!preg_match("/[A-Za-z.-_]*@[A-Za-z]*.[a-z.]{2,}/", $_POST['email']))
             {
@@ -130,7 +133,7 @@ The login and register -php stuff is in 2 seperate <?php?> tags.
         }
         
         
-        /*
+        /*!
         First name/Last name and gender is Optional so their name will not be 
         saved in the $missing_data array. Instead if they are empty or invalid they get just set tu NULL
         */
